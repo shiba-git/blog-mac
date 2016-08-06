@@ -1,20 +1,41 @@
-<% provide(:title, 'Reset password') %>
-<h1>Reset password</h1>
+<div class = "bootstrap-padding">
+  <div class = "wrapper-skinny">
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
-      <%= render 'shared/error_messages' %>
+    <div id = "form">
 
-      <%= hidden_field_tag :email, @user.email %>
+        <% provide(:title, 'Reset password') %>
+        <h1 align="center">パスワード再設定</h1>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+              <%= render 'shared/error_messages' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+              <%= hidden_field_tag :email, @user.email %>
 
-      <%= f.submit "Update password", class: "btn btn-primary" %>
-    <% end %>
+            <div class="field">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation, "Confirmation" %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+            </div>
+
+              <%= f.submit "Update password", class: "button button_color button_center" %>
+            <% end %>
+
+            <hr class = "line-form">
+
+              <div class = "action">
+                <p>パスワードを変更した場合、元に戻す事は出来ません。</p>
+              </div>
+          </div>
+        </div>
+
+
+    </div>
+
   </div>
 </div>

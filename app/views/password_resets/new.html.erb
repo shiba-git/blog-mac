@@ -1,13 +1,31 @@
-<% provide(:title, "Forgot password") %>
-<h1>Forgot password</h1>
+<div class = "bootstrap-padding">
+  <div class = "wrapper-skinny">
+	<div id = "form">
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+	
+		<% provide(:title, "Forgot password") %>
+		<h1 align="center">パスワード再設定</h1>
 
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
-  </div>
+		<div class="row">
+		  <div class="col-md-6 col-md-offset-3">
+		    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+
+		    <div class="field">
+		      <%= f.label :email %>
+		      <%= f.email_field :email, class: 'form-control' %>
+		    </div>
+
+		      <%= f.submit "Submit", class: "button button_color button_center" %>
+		    <% end %>
+
+		    <hr class = "line-form">
+
+	        <div class = "action">
+	              <p>パスワードを忘れてしまったアカウントの<br><span class = "red">メールアドレス</span>を入力して下さい。</p>
+	        </div>
+		  </div>
+		</div>
+
+	</div>
+　</div>
 </div>

@@ -1,2 +1,258 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+$white: #FFFFFF;
+$light: #EDEFF5;
+$main-color: #4C4C4C;
+$red: #FF0000;
+
+.bootstrap-padding{
+	padding-top: 80px;
+}
+
+.wrapper{
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrapper-skinny{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.red{
+	color: $red;
+}
+
+.navbar{
+    background-color: rgba(0,0,0,0.7);
+    padding: 10px;   
+    border-bottom: none;
+     .navbar-brand{
+         font-weight: bold;
+         font-size: 25px;
+         color: $white;
+         font-family: 'Open Sans', cursive;
+         text-transform: uppercase;
+         &:hover{
+         	color: $white;
+         }
+    }
+		.navbar-nav{ 
+		    li{
+		         a{
+		            color: $white;
+		            font-family: 'Open Sans', cursive;
+		            text-transform: uppercase;
+		                &:hover{
+         					color: $white;
+         				}
+		         }
+		    }
+		}
+}
+
+#background{
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-image: url("Homepage_photo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8);
+    h1{
+    	font-family: 'Open Sans', cursive;
+        text-align: center;
+		color: $white;
+		font-size: 70px;
+		font-weight: 1000;
+		letter-spacing: 1px;
+		margin: 22rem 0 3rem 0;
+    }
+    .text{
+    	font-family: 'Open Sans', cursive;
+        text-align: center;
+		color: $white;
+		font-size: 20px;
+		font-weight: 300;
+		letter-spacing: 1px;
+    }
+	.scroll-btn{
+		text-align: center;
+	    .btn-circle{
+	    	width: 70px;
+			height: 70px;
+			margin-top: 150px;
+			padding: 7px 7px;
+			border: 2px solid $white;
+			color: $white;
+			border-radius: 100%;
+			background: transparent;
+			&:hover{
+				outline: none;
+				color: $white;
+				background: rgba(255,255,255, 0.1);
+			}
+	    }
+	}
+}
+
+.about {
+	padding: 50px 0 120px 0;
+}
+
+.code{
+	padding: 50px 0 120px 0;
+}
+
+.line{
+    margin-bottom: 40px;
+}
+
+.line-width{
+	margin-bottom: 40px;
+	width: 40%;
+}
+
+.line-form{
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+
+.icon{
+    text-align: center;
+    margin: 5px;
+}
+
+#madeby{
+    padding: 150px 0;
+    h1{
+        font-size: 30px;
+        font-weight: bold;
+        color: $white;
+        text-align: center;
+    }
+    p{
+        text-align: center;
+        font-weight: bold;
+        color: $white;
+    }
+    a{
+        text-decoration: none;
+        color: $white;
+    }
+}
+
+.bg-image{
+    background-image: url("madeby.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    max-height: 100%;
+}
+
+.center{
+	text-align: center;
+	margin-top: 20px;
+	p{
+		margin: 10px 0;
+	}
+}
+
+#center{
+    text-align: center;
+}
+
+#footer{
+	background-color: rgb(76,76,76);
+    padding: 20px;
+    text-align: center;
+    color: $white;
+}
+
+input[type="email"],input[type="password"],input[type="text"],
+textarea{
+    width: 100%;
+    height: 3.5rem;
+    padding: .25rem 1rem;
+    background: $light;
+    border: 1px solid darken($light, 5%);
+	border-radius: .35rem;
+	margin-top: .5rem;
+}
+
+#session_remember_me{
+	background: $light;
+    border: 1px solid darken($light, 5%);
+    margin-left: 7px;
+}
+
+
+#form{
+    padding: 5rem 0 5rem 0;
+}
+
+.field{
+	margin: .5rem 0 1.5rem 0;
+}
+
+textarea{
+    min-height: 8rem;
+    margin-top: .5rem !important;
+}
+
+.action{
+	margin: 10px 0;
+}
+
+.button{
+	text-decoration: none;
+	font-size: 2rem;
+    padding: 1.2rem 5.5rem;
+    border: 2px solid $main-color;
+    border-radius: 5rem;
+	outline: none;
+	display: inline-block;
+	min-width: 8.5rem;
+	margin: 0 20px;
+}
+
+.button_center{
+	display: block;
+	margin: 0 auto;
+}
+
+.button_color{
+    background: $main-color;
+    color: $white;
+	transition: background .4s ease-in-out;
+	&:hover{
+	    color: $white;
+	    opacity: 0.9;
+	    text-decoration: none;
+	}
+}
+
+
+.box{
+    float: left;
+    width: 30%;
+    height: auto;
+    padding: 20px;
+    margin: 5px 10px;
+    border: 1px solid $main-color;
+    background: $light;
+    text-align: center;
+}
+
+
+
+
+
+
+

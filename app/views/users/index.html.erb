@@ -1,19 +1,32 @@
 
-<% provide(:title, 'All users') %>
-<h1>All users</h1>
+<div class = "bootstrap-padding">
+  <div class = "wrapper">
+  	
+		<% provide(:title, 'All users') %>
+		
+		<div id = "form">
 
-<%= will_paginate %>
+			<h1 align="center">全ユーザー</h1>
 
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= gravatar_for user, size: 50 %>
-      <%= link_to user.name, user %>
-      <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
-    </li>
-  <% end %>
-</ul>
+			<hr class = "line">
 
-<%= will_paginate %>
+		<%= will_paginate %>
+
+				<% @users.each do |user| %>
+					<div class = "box">
+						<%= gravatar_for user, size: 50 %><br>
+					  	<%= link_to user.name, user %>
+
+						  <% if !current_user.nil? && current_user.admin? && !current_user?(user) %>
+						    | <%= link_to "delete", user, method: :delete,
+						                                  data: { confirm: "You sure?" } %>
+						  <% end %>
+					</div>
+				<% end %>
+
+		<%= will_paginate %>
+
+		</div>
+		
+	</div>
+</div>
