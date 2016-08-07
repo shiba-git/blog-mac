@@ -1,10 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "posts";
 
 $white: #FFFFFF;
 $light: #EDEFF5;
 $main-color: #4C4C4C;
 $red: #FF0000;
+
+.right{
+    float: right;
+}
+
+.left{
+    float: left;
+}
 
 .bootstrap-padding{
 	padding-top: 80px;

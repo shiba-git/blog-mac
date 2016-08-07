@@ -1,0 +1,49 @@
+$light: #EDEFF5;
+
+.show{
+	margin: 50px 0;
+	.show-title{
+		text-align: center;
+	}
+	.show-description{
+		text-align: center;
+		font-size: 12px;
+		margin: 0 auto;
+		width: 50%;
+		padding-bottom: 60px;
+	}
+
+}
+
+
+.user-show{
+	margin: 50px 0 50px 0;
+	.user-title{
+		margin-top: 30px;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.user-description{
+		text-align: center;
+		font-size: 12px;
+		margin: 0 auto;
+		width: 30%;
+		margin-bottom: 20px;
+	}
+	.user-time{
+		text-align: center;
+		border-bottom: 1px solid $light;
+		padding-bottom: 30px;
+		&:last-child {
+			border: none;
+		}
+	}
+}
+
+.profile{
+	margin-bottom: 20px;
+}
+
+.post-button{
+	margin-top: 10px;
+}

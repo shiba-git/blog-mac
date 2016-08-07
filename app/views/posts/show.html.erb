@@ -1,0 +1,33 @@
+<div class = "bootstrap-padding">
+  <div class = "wrapper-skinny">  
+
+  	<div class="show">
+
+		<div id = "center">
+			<%= image_tag @post.picture.url, :class => "show-picture" if @post.picture? %>
+		</div>
+
+		<div class="show-title">
+			<h1><%= @post.title %></h1>
+		</div>
+
+		<div class="show-description">
+			<%= @post.description %>
+		</div>
+
+
+		
+
+		<% if current_user?(@post.user) %>
+			<hr class = "show-line">
+			<%= link_to "編集", edit_post_path(@post) %> / <%= link_to "削除", post_path(@post), method: :delete %> / <%= link_to "Back", user_path(current_user) %>
+		<% else %>
+			<hr class = "show-line">
+			<%= link_to "Back", :back %>
+		<% end %>
+
+	</div>
+
+
+  </div>
+</div>
