@@ -13,18 +13,58 @@
 
 		<div class="show-description">
 			<%= @post.description %>
+			
+			<% if current_user?(@post.user) %>
+			<hr class = "show-line">
+			<%= link_to "記事の編集", edit_post_path(@post) %> / <%= link_to "記事の削除", post_path(@post), method: :delete %> 
+			<% end %>
+		</div>
+
+		<div class="comment-title">
+			<h2>コメント</h2>
 		</div>
 
 
-		
+		<% @post.comments.each do |comment| %>
+			<div class="comment-commenter">
+				コメントした人: <%= link_to comment.commenter, user_path(comment.id) %>
+				<!-- 後で確認　-->
+			</div>
+			<div class="comment-description">
+				<%= comment.description %>
+			</div>
 
-		<% if current_user?(@post.user) %>
+			<% if comment.commenter == current_user.name %>
+				<%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
+			<% end %>
+
 			<hr class = "show-line">
-			<%= link_to "編集", edit_post_path(@post) %> / <%= link_to "削除", post_path(@post), method: :delete %> / <%= link_to "Back", user_path(current_user) %>
-		<% else %>
-			<hr class = "show-line">
-			<%= link_to "Back", :back %>
+
+
 		<% end %>
+
+		<div class="new-comment">
+			<% if logged_in? %>
+				<p>新規コメント</p>
+
+				<%= form_for [@post, @post.comments.build] do |f| %>
+					<%= f.hidden_field :commenter, value: current_user.name %>
+					<div class="field">
+						<%= f.text_area :description %>
+					</div>
+
+					<%= f.submit "コメントする", class: "button button_color button_center" %>
+
+				<% end %>
+			<% else %>
+				<div class = "comment-title">
+					コメントはログイン、登録しないと投稿出来ません。
+				</div>
+			<% end %> 
+		</div>
+
+		<hr class = "show-line">
+		<%= link_to "Back", :back %>
 
 	</div>
 
