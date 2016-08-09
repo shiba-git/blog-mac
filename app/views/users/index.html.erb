@@ -12,17 +12,19 @@
 
 		<%= will_paginate %>
 
-				<% @users.each do |user| %>
-					<div class = "box">
-						<%= gravatar_for user, size: 50 %><br>
-					  	<%= link_to user.name, user %>
+				<div id= "users" >
+					<% @users.each do |user| %>
+						<div class = "box">
+							<%= gravatar_for user, size: 50 %><br>
+						  	<%= link_to user.name, user %>
 
-						  <% if !current_user.nil? && current_user.admin? && !current_user?(user) %>
-						    | <%= link_to "delete", user, method: :delete,
-						                                  data: { confirm: "You sure?" } %>
-						  <% end %>
-					</div>
-				<% end %>
+							  <% if !current_user.nil? && current_user.admin? && !current_user?(user) %>
+							    | <%= link_to "delete", user, method: :delete,
+							                                  data: { confirm: "You sure?" } %>
+							  <% end %>
+						</div>
+					<% end %>
+				</div>
 
 		<%= will_paginate %>
 

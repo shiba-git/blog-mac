@@ -267,11 +267,9 @@ textarea{
     border: 1px solid $main-color;
     background: $light;
     text-align: center;
+    &:last-of-type{
+        margin-bottom: 100px;
+    }
 }
-
-
-
-
-
 
 
