@@ -12,6 +12,9 @@ $light: #EDEFF5;
 		width: 50%;
 		padding-bottom: 60px;
 	}
+	.like-button{
+		width: 30%;
+	}
 
 }
 
@@ -41,7 +44,7 @@ $light: #EDEFF5;
 }
 
 .comment-title{
-	margin: 50px 0;
+	margin: 50px 0 30px 0;
 }
 
 .new-comment{
@@ -55,3 +58,11 @@ $light: #EDEFF5;
 .post-button{
 	margin-top: 10px;
 }
+
+.back-class{
+	margin-bottom: 50px;
+}
+
+
+
+

@@ -7,17 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
 
 <%= render 'layouts/header' %>
+
+
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>", id = "alert-wrapper"><%= message %></div>
+  <% end %>
 
 
 <%= yield %>
 
 <script>
 	new WOW().init();
+
+	$(document).ready(function(){
+		setTimeout(function(){
+			$('#alert-wrapper').fadeOut("slow", function(){
+					$this.remove();
+			});
+		}, 3000);
+	});
 </script>
 
 

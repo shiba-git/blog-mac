@@ -3,6 +3,7 @@
 
   	<div class="show">
 
+
 		<div id = "center">
 			<%= image_tag @post.picture.url, :class => "show-picture" if @post.picture? %>
 		</div>
@@ -18,10 +19,13 @@
 			<hr class = "show-line">
 			<%= link_to "記事の編集", edit_post_path(@post) %> / <%= link_to "記事の削除", post_path(@post), method: :delete %> 
 			<% end %>
+
 		</div>
 
+
 		<div class="comment-title">
-			<h2>コメント</h2>
+			<h5><b>コメント欄</b>
+			(コメントはログイン、登録しないと投稿出来ません。)</h5>
 		</div>
 
 
@@ -34,8 +38,10 @@
 				<%= comment.description %>
 			</div>
 
-			<% if comment.commenter == current_user.name %>
-				<%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
+			<% unless current_user.nil? %>
+				<% if comment.commenter == current_user.name %>
+					<%= link_to "削除", post_comment_path(@post, comment), method: :delete %>
+				<% end %>
 			<% end %>
 
 			<hr class = "show-line">
@@ -48,7 +54,7 @@
 				<p>新規コメント</p>
 
 				<%= form_for [@post, @post.comments.build] do |f| %>
-					<%= f.hidden_field :commenter, value: current_user.name %>
+						<%= f.hidden_field :commenter, value: current_user.name %>
 					<div class="field">
 						<%= f.text_area :description %>
 					</div>
@@ -56,15 +62,13 @@
 					<%= f.submit "コメントする", class: "button button_color button_center" %>
 
 				<% end %>
-			<% else %>
-				<div class = "comment-title">
-					コメントはログイン、登録しないと投稿出来ません。
-				</div>
 			<% end %> 
 		</div>
 
-		<hr class = "show-line">
-		<%= link_to "Back", :back %>
+
+		<div class = "left back-class">	
+				<%= link_to "<<Back", :back %>
+			</div>
 
 	</div>
 

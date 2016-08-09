@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   get 'password_resets/new'
-
   get 'password_resets/edit'
 
   get    'login'   => 'sessions#new'
@@ -18,7 +17,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-   resources :users
+   resources :users 
    resources :account_activations, only: [:edit]
    resources :password_resets,     only: [:new, :create, :edit, :update]
    resources :posts do 

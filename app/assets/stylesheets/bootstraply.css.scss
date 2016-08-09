@@ -7,6 +7,15 @@ $light: #EDEFF5;
 $main-color: #4C4C4C;
 $red: #FF0000;
 
+
+#alert-wrapper{
+    text-align: center;
+    padding: 30px 0;
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+
 .right{
     float: right;
 }
@@ -38,6 +47,7 @@ $red: #FF0000;
     background-color: rgba(0,0,0,0.7);
     padding: 10px;   
     border-bottom: none;
+    z-index: 0;
      .navbar-brand{
          font-weight: bold;
          font-size: 25px;
